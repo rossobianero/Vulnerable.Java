@@ -1,0 +1,19 @@
+name: CI - Vulnerable.Java
+
+on:
+  push:
+  pull_request:
+
+jobs:
+  java-test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Setup JDK
+        uses: actions/setup-java@v4
+        with:
+          distribution: temurin
+          java-version: '11'
+      - name: Build & Test with Maven
+        working-directory: Vulnerable.Java
+        run: mvn test
