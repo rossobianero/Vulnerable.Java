@@ -189,3 +189,5 @@ README.html
 *.iml
 .idea
 .exercism
+
+*.db
